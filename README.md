@@ -46,10 +46,10 @@ Ajou Univ. OS_Project2
 ```cmd
 ~$ git clone https://github.com/12941516/ajou_os_project2.git -b master
 ~$ cd ajou_os_project2
-~/ajou_os_project2$ gcc -o rw2_no_sync rw2_no_sync.c -lpthread
-~/ajou_os_project2$ gcc -o rw2_with_sync rw2_with_sync.c -lpthread
-~/ajou_os_project2$ gcc -o pc2_no_sync pc2_no_sync.c -lpthread
-~/ajou_os_project2$ gcc -o pc2_with_sync pc2_with_sync.c -lpthread
+~/ajou_os_project2$ gcc -o reader_writer2/rw2_no_sync reader_writer2/rw2_no_sync.c -lpthread
+~/ajou_os_project2$ gcc -o reader_writer2/rw2_with_sync reader_writer2/rw2_with_sync.c -lpthread
+~/ajou_os_project2$ gcc -o producer_consumer2/pc2_no_sync producer_consumer2/pc2_no_sync.c -lpthread
+~/ajou_os_project2$ gcc -o producer_consumer2/pc2_with_sync producer_consumer2/pc2_with_sync.c -lpthread
 ```
 
 ---
@@ -64,10 +64,10 @@ Ajou Univ. OS_Project2
 
 # 코드를 ajou_os_project2 디렉토리로 옮긴 뒤 아래 내용 진행
 
-~/ajou_os_project2$ gcc -o rw2_no_sync rw2_no_sync.c -lpthread
-~/ajou_os_project2$ gcc -o rw2_with_sync rw2_with_sync.c -lpthread
-~/ajou_os_project2$ gcc -o pc2_no_sync pc2_no_sync.c -lpthread
-~/ajou_os_project2$ gcc -o pc2_with_sync pc2_with_sync.c -lpthread
+~/ajou_os_project2$ gcc -o reader_writer2/rw2_no_sync reader_writer2/rw2_no_sync.c -lpthread
+~/ajou_os_project2$ gcc -o reader_writer2/rw2_with_sync reader_writer2/rw2_with_sync.c -lpthread
+~/ajou_os_project2$ gcc -o producer_consumer2/pc2_no_sync producer_consumer2/pc2_no_sync.c -lpthread
+~/ajou_os_project2$ gcc -o producer_consumer2/pc2_with_sync producer_consumer2/pc2_with_sync.c -lpthread
 ```
 
 ---
@@ -79,7 +79,7 @@ Ajou Univ. OS_Project2
 #### 동기화 없는 버전 실행
 
 ```cmd
-~/ajou_os_project2$ ./pc2_no_sync
+~/ajou_os_project2$ ./producer_consumer2/pc2_no_sync
 ```
 
 * 여러 producer가 버퍼에 동시에 데이터를 쓰고, consumer가 읽는 과정에서 race condition이 발생하는 것을 볼 수 있다.
@@ -88,7 +88,7 @@ Ajou Univ. OS_Project2
 #### 동기화 있는 버전 실행
 
 ```cmd
-~/ajou_os_project2$ ./pc2_with_sync
+~/ajou_os_project2$ ./producer_consumer2/pc2_with_sync
 ```
 
 * `mutex`와 `condition variable`로 버퍼 접근을 동기화하는 코드로 race condition 문제가 해결된 것을 확인할 수 있다.
@@ -101,7 +101,7 @@ Ajou Univ. OS_Project2
 #### 동기화 없는 버전 실행
 
 ```cmd
-~/ajou_os_project2$ ./rw2_no_sync
+~/ajou_os_project2$ ./reader_writer2/rw2_no_sync
 ```
 
 * writer가 데이터를 갱신하는 중 reader가 읽으면 데이터 불일치가 발생할 수 있다.
@@ -110,7 +110,7 @@ Ajou Univ. OS_Project2
 #### 동기화 있는 버전 실행
 
 ```cmd
-~/ajou_os_project2$ ./rw2_with_sync
+~/ajou_os_project2$ ./reader_writer2/rw2_with_sync
 ```
 
 * reader/writer mutex를 사용하여 공유 데이터로의 접근을 보호한다.
