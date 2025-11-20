@@ -1,31 +1,29 @@
-# 운영체제 프로젝트
+# 운영체제 프로젝트2
 
-ajou_os_project_race_condition(소프트웨어학과 202422117 금민기)
+ajou_os_project2(소프트웨어학과 202422117 금민기)
 
-Ajou Univ. OS_Project
+Ajou Univ. OS_Project2
 
 ## 프로젝트명
 
-**Race Condition과 동기화 문제 실습: Producer/Consumer & Reader/Writer 모델**
+**Race Condition과 Syncrinization 문제 실습: Producer/Consumer & Reader/Writer 모델**
 
 ---
 
 ## 개요
 
-이 프로젝트는 운영체제 수업의 두 번째 과제로, race condition이 발생하는 상황과 이를 해결하는 동기화 기법(semaphore, mutex, condition variable)을 학습하기 위해 제작하였다.
+이 프로젝트는 운영체제 수업의 두 번째 과제로, race condition이 발생하는 상황과 이를 해결하는 동기화 기법(semaphore, mutex, condition variable)을 학습하기 위한 것이다.
 
 프로젝트는 다음 두 가지 모델로 구성된다:
 
 1. **Producer/Consumer 모델**
-
-   * 동기화 없는(no sync) 버전과 동기화(sync) 버전을 구현
-   * 버퍼에 데이터를 넣고 빼는 과정에서 race condition 발생 확인
+   * 동기화 없는(no sync) 버전과 동기화(sync) 버전을 구현해야 한다.
+   * 버퍼에 데이터를 넣고 빼는 과정에서 race condition가 발생함을 확인한다.
 
 2. **Reader/Writer 모델**
-
-   * 공유 데이터에 대해 동시 읽기와 쓰기를 수행
-   * 동기화 없는(no sync) 버전에서 데이터 충돌(race condition) 발생 확인
-   * mutex를 사용한 동기화(sync) 버전에서 문제 해결 확인
+   * 공유 데이터에 대해 동시 읽기와 쓰기를 수행한다.
+   * 동기화를 구현하지 않은(no sync) 버전에서 race condition가 발생함을 확인한다.
+   * mutex를 사용한 동기화(sync) 버전의 코드에서 문제가 해결됨을 확인한다.
 
 이를 통해 동기화의 필요성과 효과를 직접 확인할 수 있으며, 리눅스 환경에서 **pthread, mutex, condition variable** 사용법과 **race condition** 개념을 실습할 수 있다.
 
