@@ -12,7 +12,7 @@ Ajou Univ. OS_Project
 
 ## 개요
 
-이 프로젝트는 운영체제 수업의 두 번째 과제로, **race condition**이 발생하는 상황과 이를 해결하는 **동기화 기법(semaphore, mutex, condition variable)**을 학습하기 위해 제작하였다.
+이 프로젝트는 운영체제 수업의 두 번째 과제로, race condition이 발생하는 상황과 이를 해결하는 동기화 기법(semaphore, mutex, condition variable)을 학습하기 위해 제작하였다.
 
 프로젝트는 다음 두 가지 모델로 구성된다:
 
