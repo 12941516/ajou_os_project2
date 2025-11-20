@@ -100,21 +100,21 @@ Ajou Univ. OS_Project2
 
 #### 동기화 없는 버전 실행
 
-```bash
-./rw2_no_sync
+```cmd
+~/ajou_os_project2$ ./rw2_no_sync
 ```
 
-* writer가 데이터를 갱신하는 중 reader가 읽어 데이터 불일치 발생 가능
-* 콘솔에서 값이 건너뛰거나 중복 출력되는 것을 확인할 수 있음
+* writer가 데이터를 갱신하는 중 reader가 읽으면 데이터 불일치가 발생할 수 있다.
+* 실제로 콘솔에서 값이 건너뛰어지거나 중복되어 출력되는 것을 확인할 수 있다.
 
 #### 동기화 있는 버전 실행
 
-```bash
-./rw2_with_sync
+```cmd
+~/ajou_os_project2$ ./rw2_with_sync
 ```
 
-* reader/writer mutex 사용으로 공유 데이터 접근을 보호
-* race condition 문제 해결, reader는 동시에 읽을 수 있지만 writer는 단독 접근 보장
+* reader/writer mutex를 사용하여 공유 데이터로의 접근을 보호한다.
+* race condition 문제를 해결할 수 있는데, reader는 동시에 읽을 수 있지만 writer는 단독 접근을 보장하였다.
 
 ---
 
@@ -136,7 +136,7 @@ job_t buffer[BUF_SIZE];
 ### Reader/Writer
 
 * 공유 변수: `int shared_data`
-* 동기화된 버전에서는 `pthread_mutex_t mutex`와 `pthread_mutex_t rw_mutex` 사용
+* 동기화된 버전에서는 `pthread_mutex_t mutex`와 `pthread_mutex_t rw_mutex`를 사용했다.
 
 ---
 
@@ -151,7 +151,7 @@ job_t buffer[BUF_SIZE];
 >>> [Consumer] WARNING: slot 3 was EMPTY!
 ```
 
-* 같은 슬롯에 여러 producer가 동시에 접근하여 race condition 발생
+* 같은 슬롯에 여러 producer가 동시에 접근하여 race condition이 발생하는 것을 확인할 수 있다.
 
 ### Producer/Consumer (with sync)
 
@@ -160,7 +160,7 @@ job_t buffer[BUF_SIZE];
 >>> [Consumer] Took job from slot 0 (priority=0, value=123, iter=0)
 ```
 
-* 동기화로 race condition이 발생하지 않음
+* 동기화로 race condition이 발생하지 않음을 확인할 수 있다.
 
 ### Reader/Writer (no sync)
 
@@ -171,7 +171,7 @@ job_t buffer[BUF_SIZE];
     [Writer] Updated value to 2
 ```
 
-* writer 갱신 중 reader가 읽어 불일치 발생
+* writer 갱신 중 reader가 읽어 데이터 간의 불일치가 발생함을 확인할 수 있다.
 
 ### Reader/Writer (with sync)
 
@@ -180,29 +180,27 @@ job_t buffer[BUF_SIZE];
     [Writer] Updated value to 1
 ```
 
-* 동기화로 데이터 일관성 보장
+* 동기화로 데이터 일관성을 보장함을 확인할 수 있다.
 
 ---
 
 ## 에러 처리 및 주의사항
 
-* 버퍼 접근 시 동기화를 하지 않으면 race condition 발생
-* 콘솔 메시지는 race condition 발생 여부를 확인하는 학습용 예시
-* 필요 시 `usleep()`로 context switching을 인위적으로 발생시켜 race condition을 유도
+* 버퍼 접근 시 동기화를 하지 않으면 race condition이 발생한다.
+* 콘솔 메시지는 race condition 발생 여부를 확인하기 위한 것으로, 반복 횟수와 함께 표시하였다.
+* 강제로 race condition을 돋보이게 만들기 위해 `usleep()`로 context switching을 인위적으로 발생시켜 race condition을 유도하였다.
 
 ---
 
 ## 테스트 케이스
 
 1. **Producer/Consumer**
-
-   * no sync: 빈 슬롯 접근, 중복 쓰기 발생 확인
-   * with sync: 모든 생산/소비 동작 정상 처리
+   * no sync: 빈 슬롯 접근, 중복 쓰기 발생을 확인한다.
+   * with sync: 모든 producer/consumer 동작이 정상적으로 처리됨을 확인한다.
 
 2. **Reader/Writer**
-
-   * no sync: reader/writer 중 데이터 불일치 확인
-   * with sync: reader는 동시에 읽어도 writer 접근 보호 확인
+   * no sync: reader/writer 중 데이터 불일치를 확인한다.
+   * with sync: reader는 동시에 읽어도 writer 접근이 보호됨을 확인한다.
 
 ---
 
@@ -210,7 +208,9 @@ job_t buffer[BUF_SIZE];
 
 * W. Richard Stevens, *Advanced Programming in the UNIX Environment*
 * Pthreads Documentation: [https://man7.org/linux/man-pages/man7/pthreads.7.html](https://man7.org/linux/man-pages/man7/pthreads.7.html)
-* 아주대학교 MOCA 자료 및 수업 교재
+* 아주대학교 MOCA 자료(리눅스 관련 자료: [https://moca.ajou.ac.kr](https://moca.ajou.ac.kr)) 및 수업 교재
+* GCC 컴파일 방법 자료: https://code-lab1.tistory.com/368
+* Thread에서의 동기화 개념 참고 자료: https://wikidocs.net/65529
 
 ---
 
@@ -223,6 +223,6 @@ job_t buffer[BUF_SIZE];
 
 ## 요약
 
-* 본 프로젝트는 **race condition 발생 및 해결**을 직접 구현하고 학습하기 위해 제작
-* Producer/Consumer와 Reader/Writer 모델을 사용하여 동기화 전후 차이를 관찰
-* pthread, mutex, condition variable 사용을 통해 **동기화 기법 실습** 및 **데이터 일관성 확보**를 경험
+* 본 프로젝트는 race condition 발생 및 해결을 직접 구현하고 학습하기 위한 것이다.
+* Producer/Consumer와 Reader/Writer 모델을 사용하여 동기화 전후 차이를 관찰하였으며, 동기화 사용으로 race condition 발생을 해결함을 확인하였다.
+* pthread, mutex, condition variable 사용을 통해 동기화 기법 실습 및 데이터 일관성 확보를 경험하였다.
