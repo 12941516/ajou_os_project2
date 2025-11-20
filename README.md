@@ -62,7 +62,7 @@ Ajou Univ. OS_Project2
 ~$ mkdir ajou_os_project2
 ~$ cd ajou_os_project2
 
-# 코드를 ajou_os_project2 디렉토리로 옮긴 뒤 아래 내용 진행
+# producer_consumer2와 reader_writer2 디렉토리를 ajou_os_project2 디렉토리 안에 복사한 뒤 아래 내용 진행
 
 ~/ajou_os_project2$ gcc -o reader_writer2/rw2_no_sync reader_writer2/rw2_no_sync.c -lpthread
 ~/ajou_os_project2$ gcc -o reader_writer2/rw2_with_sync reader_writer2/rw2_with_sync.c -lpthread
