@@ -61,7 +61,9 @@ Ajou Univ. OS_Project2
 ```cmd
 ~$ mkdir ajou_os_project2
 ~$ cd ajou_os_project2
-# 코드를 ajou_os_project2 디렉토리로 옮긴 뒤 아래 내용 진행 #
+
+# 코드를 ajou_os_project2 디렉토리로 옮긴 뒤 아래 내용 진행
+
 ~/ajou_os_project2$ gcc -o rw2_no_sync rw2_no_sync.c -lpthread
 ~/ajou_os_project2$ gcc -o rw2_with_sync rw2_with_sync.c -lpthread
 ~/ajou_os_project2$ gcc -o pc2_no_sync pc2_no_sync.c -lpthread
@@ -76,21 +78,21 @@ Ajou Univ. OS_Project2
 
 #### 동기화 없는 버전 실행
 
-```bash
-./pc2_no_sync
+```cmd
+~/ajou_os_project2$ ./pc2_no_sync
 ```
 
-* 여러 producer가 버퍼에 동시에 데이터를 쓰고, consumer가 읽는 과정에서 **race condition**이 발생함
-* 콘솔에서 빈 슬롯을 접근하거나 덮어쓰는 메시지를 확인할 수 있음
+* 여러 producer가 버퍼에 동시에 데이터를 쓰고, consumer가 읽는 과정에서 race condition이 발생하는 것을 볼 수 있다.
+* results의 결과 로그나 실제 코드 실행 결과를 통해 콘솔에서 빈 슬롯에 접근하거나, 이미 내용물이 있는 슬롯에 덮어쓰는 메시지를 확인할 수 있다.
 
 #### 동기화 있는 버전 실행
 
-```bash
-./pc2_with_sync
+```cmd
+~/ajou_os_project2$ ./pc2_with_sync
 ```
 
-* `mutex`와 `condition variable`로 버퍼 접근을 동기화
-* race condition 문제 해결 확인
+* `mutex`와 `condition variable`로 버퍼 접근을 동기화하는 코드로 race condition 문제가 해결된 것을 확인할 수 있다.
+* 즉, 빈 슬롯을 읽거나 이미 채워진 슬롯을 덮어쓰는 작용을 예방한 것이다.
 
 ---
 
