@@ -39,18 +39,33 @@ Ajou Univ. OS_Project2
 
 ---
 
-## 빌드 방법
+## 빌드 방법1
 
-터미널에서 다음 명령으로 컴파일:
+터미널에서 다음 명령으로 git clone한 뒤, 각각 gcc 컴파일한다:
 
-```bash
-# Producer/Consumer
-gcc -o pc2_no_sync pc2_no_sync.c -lpthread
-gcc -o pc2_with_sync pc2_with_sync.c -lpthread
+```cmd
+~$ git clone https://github.com/12941516/ajou_os_project2.git -b master
+~$ cd ajou_os_project2
+~/ajou_os_project2$ gcc -o rw2_no_sync rw2_no_sync.c -lpthread
+~/ajou_os_project2$ gcc -o rw2_with_sync rw2_with_sync.c -lpthread
+~/ajou_os_project2$ gcc -o pc2_no_sync pc2_no_sync.c -lpthread
+~/ajou_os_project2$ gcc -o pc2_with_sync pc2_with_sync.c -lpthread
+```
 
-# Reader/Writer
-gcc -o rw2_no_sync rw2_no_sync.c -lpthread
-gcc -o rw2_with_sync rw2_with_sync.c -lpthread
+---
+
+## 빌드 방법2
+
+터미널에서 다음 순서대로 디렉토리를 생성한 뒤, 각 소스코드를 해당 디렉토리에 삽입하고 컴파일한다.
+
+```cmd
+~$ mkdir ajou_os_project2
+~$ cd ajou_os_project2
+# 코드를 ajou_os_project2 디렉토리로 옮긴 뒤 아래 내용 진행 #
+~/ajou_os_project2$ gcc -o rw2_no_sync rw2_no_sync.c -lpthread
+~/ajou_os_project2$ gcc -o rw2_with_sync rw2_with_sync.c -lpthread
+~/ajou_os_project2$ gcc -o pc2_no_sync pc2_no_sync.c -lpthread
+~/ajou_os_project2$ gcc -o pc2_with_sync pc2_with_sync.c -lpthread
 ```
 
 ---
