@@ -1,0 +1,23 @@
+[Reader 2] Detected change: -1 -> 0
+[Reader 1] Detected change: -1 -> 0
+    [Writer] Updated value to 1
+[Reader 2] Detected change: 0 -> 1
+[Reader 1] Detected change: 0 -> 1
+    [Writer] Updated value to 2
+[Reader 2] Detected change: 1 -> 2
+[Reader 1] Detected change: 1 -> 2
+    [Writer] Updated value to 3
+[Reader 1] Detected change: 2 -> 3
+[Reader 2] Detected change: 2 -> 3
+    [Writer] Updated value to 4
+[Reader 2] Detected change: 3 -> 4
+[Reader 1] Detected change: 3 -> 4
+    [Writer] Updated value to 5
+[Reader 1] Detected change: 4 -> 5
+[Reader 2] Detected change: 4 -> 5
+    [Writer] Updated value to 6
+[Reader 1] Detected change: 5 -> 6
+    [Writer] Updated value to 7
+    [Writer] Updated value to 8
+    [Writer] Updated value to 9
+    [Writer] Updated value to 10

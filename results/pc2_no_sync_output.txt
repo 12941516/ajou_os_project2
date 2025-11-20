@@ -1,0 +1,82 @@
+[Producer 1] Put job at slot 3 (priority=1, iter=0)
+>>> [Consumer] Took job from slot 3 (priority=1, value=600, iter=0)
+[Producer 2] Put job at slot 4 (priority=0, iter=0)
+[Producer 1] Put job at slot 2 (priority=2, iter=1)
+>>> [Consumer] Took job from slot 4 (priority=0, value=353, iter=0)
+[Producer 1] Put job at slot 0 (priority=0, iter=2)
+>>> [Consumer] Took job from slot 0 (priority=0, value=764, iter=2)
+[Producer 1] Put job at slot 2 (priority=1, iter=3)
+[Producer 1] Put job at slot 0 (priority=1, iter=4)
+>>> [Consumer] WARNING: slot 3 was EMPTY!
+[Producer 1] Put job at slot 2 (priority=1, iter=5)
+>>> [Consumer] WARNING: slot 1 was EMPTY!
+[Producer 1] Put job at slot 2 (priority=2, iter=6)
+[Producer 1] Put job at slot 3 (priority=0, iter=7)
+>>> [Consumer] Took job from slot 2 (priority=2, value=710, iter=6)
+[Producer 2] Put job at slot 4 (priority=1, iter=1)
+[Producer 1] Put job at slot 4 (priority=1, iter=8)
+[Producer 2] Put job at slot 1 (priority=0, iter=2)
+[Producer 1] Put job at slot 2 (priority=1, iter=9)
+>>> [Consumer] Took job from slot 4 (priority=1, value=99, iter=8)
+[Producer 2] Put job at slot 2 (priority=2, iter=3)
+[Producer 1] Put job at slot 2 (priority=1, iter=10)
+>>> [Consumer] Took job from slot 0 (priority=1, value=422, iter=4)
+[Producer 2] Put job at slot 2 (priority=1, iter=4)
+[Producer 1] Put job at slot 3 (priority=2, iter=11)
+[Producer 2] Put job at slot 0 (priority=2, iter=5)
+[Producer 1] Put job at slot 2 (priority=0, iter=12)
+>>> [Consumer] Took job from slot 1 (priority=0, value=76, iter=2)
+[Producer 2] Put job at slot 3 (priority=1, iter=6)
+[Producer 1] Put job at slot 4 (priority=0, iter=13)
+>>> [Consumer] Took job from slot 2 (priority=0, value=492, iter=12)
+[Producer 2] Put job at slot 2 (priority=1, iter=7)
+[Producer 1] Put job at slot 1 (priority=0, iter=14)
+[Producer 2] Put job at slot 2 (priority=1, iter=8)
+>>> [Consumer] Took job from slot 1 (priority=0, value=929, iter=14)
+[Producer 1] Put job at slot 3 (priority=2, iter=15)
+[Producer 2] Put job at slot 0 (priority=0, iter=9)
+[Producer 1] Put job at slot 2 (priority=0, iter=16)
+>>> [Consumer] Took job from slot 0 (priority=0, value=528, iter=9)
+[Producer 2] Put job at slot 4 (priority=2, iter=10)
+[Producer 1] Put job at slot 3 (priority=1, iter=17)
+[Producer 2] Put job at slot 1 (priority=0, iter=11)
+>>> [Consumer] Took job from slot 4 (priority=2, value=82, iter=10)
+[Producer 1] Put job at slot 4 (priority=2, iter=18)
+[Producer 2] Put job at slot 3 (priority=1, iter=12)
+[Producer 1] Put job at slot 4 (priority=0, iter=19)
+>>> [Consumer] WARNING: slot 0 was EMPTY!
+[Producer 2] Put job at slot 1 (priority=1, iter=13)
+>>> [Consumer] Took job from slot 4 (priority=0, value=818, iter=19)
+[Producer 2] Put job at slot 4 (priority=1, iter=14)
+[Producer 2] Put job at slot 3 (priority=1, iter=15)
+>>> [Consumer] Took job from slot 3 (priority=1, value=533, iter=15)
+[Producer 2] Put job at slot 4 (priority=0, iter=16)
+>>> [Consumer] Took job from slot 2 (priority=0, value=749, iter=16)
+[Producer 2] Put job at slot 2 (priority=1, iter=17)
+[Producer 2] Put job at slot 3 (priority=1, iter=18)
+>>> [Consumer] Took job from slot 4 (priority=0, value=895, iter=16)
+[Producer 2] Put job at slot 0 (priority=0, iter=19)
+>>> [Consumer] Took job from slot 1 (priority=1, value=512, iter=13)
+>>> [Consumer] Took job from slot 3 (priority=1, value=474, iter=18)
+>>> [Consumer] WARNING: slot 1 was EMPTY!
+>>> [Consumer] WARNING: slot 1 was EMPTY!
+>>> [Consumer] Took job from slot 2 (priority=1, value=545, iter=17)
+>>> [Consumer] WARNING: slot 1 was EMPTY!
+>>> [Consumer] WARNING: slot 3 was EMPTY!
+>>> [Consumer] WARNING: slot 1 was EMPTY!
+>>> [Consumer] WARNING: slot 4 was EMPTY!
+>>> [Consumer] WARNING: slot 4 was EMPTY!
+>>> [Consumer] Took job from slot 0 (priority=0, value=520, iter=19)
+>>> [Consumer] WARNING: slot 4 was EMPTY!
+>>> [Consumer] WARNING: slot 0 was EMPTY!
+>>> [Consumer] WARNING: slot 3 was EMPTY!
+>>> [Consumer] WARNING: slot 3 was EMPTY!
+>>> [Consumer] WARNING: slot 0 was EMPTY!
+>>> [Consumer] WARNING: slot 3 was EMPTY!
+>>> [Consumer] WARNING: slot 4 was EMPTY!
+>>> [Consumer] WARNING: slot 0 was EMPTY!
+>>> [Consumer] WARNING: slot 0 was EMPTY!
+>>> [Consumer] WARNING: slot 1 was EMPTY!
+>>> [Consumer] WARNING: slot 4 was EMPTY!
+
+=== NO SYNC VERSION DONE ===
